@@ -1,0 +1,14 @@
+.search-bar-section {
+  background-color: #282c34;
+  margin: auto;
+}
+
+.search-bar {
+  width: 20rem;
+  height: 1.5rem;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
