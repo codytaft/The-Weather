@@ -19,6 +19,7 @@ class App extends Component {
   setLocation = location => {
     this.setState({ location });
   };
+
   render() {
     return (
       <div className="App">

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './WeatherCard.css';
 class WeatherCard extends Component {
   render() {
-    console.log(this.props.forecast);
     return (
       <div className="weather-card">
         <h1>{this.props.location}</h1>
