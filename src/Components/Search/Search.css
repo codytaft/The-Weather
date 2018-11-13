@@ -7,8 +7,22 @@
   width: 20rem;
   height: 1.5rem;
   font-size: 1rem;
+  padding-left: 0.3rem;
 }
 
 .hidden {
   display: none;
+}
+
+.search-btn {
+  height: 1.9rem;
+  font-size: 1rem;
+  background: none;
+  color: whitesmoke;
+  margin-left: 0.3rem;
+}
+
+.search-btn:hover {
+  color: #878064;
+  border-color: #878064;
 }

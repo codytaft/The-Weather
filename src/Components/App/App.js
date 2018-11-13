@@ -19,6 +19,7 @@ class App extends Component {
   setLocation = location => {
     this.setState({ location });
   };
+
   render() {
     return (
       <div className="App">
@@ -29,10 +30,8 @@ class App extends Component {
           setForecasts={this.setForecasts}
           setLocation={this.setLocation}
         />
-        <CardContainer
-          forecasts={this.state.forecasts}
-          location={this.setState.location}
-        />
+        <h2 className="location-text">{this.state.location}</h2>
+        <CardContainer forecasts={this.state.forecasts} />
       </div>
     );
   }
