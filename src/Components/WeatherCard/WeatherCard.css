@@ -1,0 +1,9 @@
+.weather-card {
+  flex-wrap: wrap;
+  margin: 1rem;
+  border: 0.1rem solid whitesmoke;
+  width: 17rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  color: whitesmoke;
+}

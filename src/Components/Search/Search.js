@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './Search.css';
 import { getFiveDayForecast } from '../../Helpers/FetchCalls';
-// import { cleanFiveDayForecast } from '../Helpers/Cleaners';
 
 class Search extends Component {
   constructor() {
     super();
     this.state = {
-      searchInput: '',
-      error: false
+      searchInput: ''
     };
   }
 
@@ -18,18 +16,24 @@ class Search extends Component {
   };
 
   handleSearch = async e => {
-    this.props.setLocation(this.state.searchInput);
-    let forecasts;
-    e.preventDefault();
-    e.persist();
-    if (this.state.searchInput.includes([0 - 9])) {
-      forecasts = await getFiveDayForecast(null, this.state.searchInput);
-      this.props.setForecasts(forecasts);
+    if (this.state.searchInput) {
+      this.props.setForecasts([]);
+      this.props.setLocation(this.state.searchInput);
+      let forecasts;
+      e.preventDefault();
+      e.persist();
+      if (this.state.searchInput.includes([0 - 9])) {
+        forecasts = await getFiveDayForecast(null, this.state.searchInput);
+        this.props.setForecasts(forecasts);
+      } else {
+        forecasts = await getFiveDayForecast(this.state.searchInput, null);
+        this.props.setForecasts(forecasts);
+      }
+      e.target.reset();
     } else {
-      forecasts = await getFiveDayForecast(this.state.searchInput, null);
-      this.props.setForecasts(forecasts);
+      this.props.setLocation('');
+      this.props.setForecasts([]);
     }
-    e.target.reset();
   };
 
   render() {

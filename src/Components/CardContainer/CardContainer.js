@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import WeatherCard from '../WeatherCard/WeatherCard';
+import './CardContainer.css';
 
-const CardContainer = forecasts => {
-  console.log(forecasts);
-  if (forecasts.forecasts.length > 0) {
-    console.log(forecasts);
-    return forecasts.forecasts.map(forecast => {
-      return <WeatherCard forecast={forecast} />;
-    });
+const CardContainer = props => {
+  if (props.forecasts) {
+    return (
+      <div className="card-container">
+        {props.forecasts.map((forecast, i) => {
+          return <WeatherCard forecast={forecast} location={props.location} />;
+        })}
+      </div>
+    );
   } else {
-    return <div />;
+    return (
+      <div>
+        <p className="error-msg">Please input a Zip Code or City</p>
+      </div>
+    );
   }
 };
 
