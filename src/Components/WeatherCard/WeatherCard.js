@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './WeatherCard.css';
-class WeatherCard extends Component {
+export class WeatherCard extends Component {
   render() {
     return (
       <div className="weather-card">
