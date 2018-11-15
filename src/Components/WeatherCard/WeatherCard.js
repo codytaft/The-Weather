@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
-class WeatherCard extends Component {
+import './WeatherCard.css';
+export class WeatherCard extends Component {
   render() {
-    console.log(this.props.forecast);
     return (
       <div className="weather-card">
-        <h1>{this.props.forecast.main.temp}hi</h1>
+        <h1>{this.props.location}</h1>
+        <h2>{this.props.forecast.dt_txt}</h2>
+        <h2>{Math.round(this.props.forecast.main.temp)}˚</h2>
       </div>
     );
   }
